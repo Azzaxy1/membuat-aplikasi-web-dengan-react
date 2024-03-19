@@ -1,0 +1,19 @@
+KONSEP DASAR REACT 
+      1. React Element dan Component
+          > Element merupakan blok terkecil dalam membangun antarmuka di aplikasi React. Seluruh UI yang tampak, merupakan sebuah element. Element dapat berupa paragraph, button, image, dan tipe lainnya. 
+          > Component merupakan sebuah fungsi JavaScript yang mengembalikan React element. Dengan menggunakan component, Anda dapat membuat element yang reusable.
+      2. Composition 
+          > proses menggabungkan banyak fungsi untuk menciptakan data yang lebih kompleks
+          > Di React, komposisi sering dipraktikkan ketika membuat sebuah komponen. Alih-alih mengembalikan data, React component mengembalikan UI.
+      3. Declarative Code
+          > Imperatif : Penulisan kode yang menjelaskan secara detail langkah demi langkah untuk mencapai tujuan. Dengan kata lain, kode yang menunjukkan “bagaimana” cara mencapai tujuan.
+          > Deklaratif : Penulisan kode yang ringkas dan jelas dengan mendeklarasikan apa yang ingin dicapai tanpa menuliskan langkah demi langkah. Dengan kata lain, kode yang menunjukkan “apa” tujuan yang ingin dicapai.
+      4. Unidirectional Data Flow
+          >  aliran data di React bersifat unidirectional atau searah dari parent component (komponen induk) ke child component (komponen anak).
+          > Di React, data terletak di parent component dan bila child component membutuhkannya, data tersebut akan dikirim dari parent component.
+          > Ketika terjadi perubahan data, parent component-lah yang dapat memperbarui datanya, karena memang datanya berada di sana. Child hanya bisa mengirimkan data terbaru yang perlu diperbarui oleh parent component.
+      5. React is Just JavaScript
+          > Meskipun terdengar kontroversial, “React hanyalah JavaScript” ada benarnya juga. Kami memiliki dua alasan mengapa demikian.
+             - Tingkat abstraksi yang dibuat React sebenarnya dangkal. Anda tidak perlu mengingat banyak API baru ketika menggunakan React.
+             - React tidak membuat fungsionalitas baru bila sudah bisa dilakukan oleh JavaScript secara standar.
+
