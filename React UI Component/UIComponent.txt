@@ -1,0 +1,49 @@
+REACT UI COMPONENT
+      1. React Element
+         > React element dan DOM element browser tidaklah identik. React element hanyalah objek JavaScript polos, ringan, dan sangat mudah untuk dibuat.
+         > Cara membuat React element adalah sbb
+            1.  React.createElement(/* type */, /* property */, /* content */);
+               - Fungsi createElement menerima 3 parameter, seperti :
+                   - type yang merupakan tipe elemen, 
+                   - property merupakan properti dari elemen, dan
+                   - content merupakan konten dari elemen.
+                   ex : const element = React.createElement('p', {id: 'myParagraph', className: 'red-paragraph'}, 'Hello, React!');
+         > Nested React Element
+            - Nilai children pada React element dapat diisi dengan tipe data apa pun, termasuk React element lain. Hal ini sangat wajar dan sering digunakan untuk membangun elemen secara nested.
+            - Jika child memiliki lebih dari satu nilai, Anda bisa mengelompokkan nilainya di dalam array []
+      2. Latihan Membuat React Element
+            > Untuk menampilkan React element pada Browser, kita perlu membuat root yang nantinya digunakan sebagai penampung di mana React element akan di-render.
+               - createRoot() : untuk membuat root
+               - Fungsi createRoot akan mengembalikan instance dari ReactDOMRoot yang bisa kita manfaatkan untuk me-render React element.
+      3. JSX 
+            > JSX hanya mengembalikan satu element
+               - Ketika menuliskan JSX, pastikan ia hanya mengembalikan satu elemen. Meskipun React element bisa nested, tapi pastikan hanya ada satu root element yang membungkus seluruh element di dalamnya.
+      4. React Component 
+            > React component merupakan fungsi JavaScript yang mengembalikan React element.
+              Terdapat 2 alasan mengapa Anda perlu membuat component.
+                 - Pembuatan UI (React element) membutuhkan logika yang tidak sederhana, serta Anda ingin proses pembuatan UI tersebut terisolasi. Dengan begitu, kode dalam membuat UI tersebut tidak mengganggu kode lainnya.
+                 - Anda ingin membuat UI yang bersifat reusable. Artinya, hanya dengan satu kode UI namun dapat digunakan sebanyak apa pun dengan banyak varian data.
+      5. Component Properties
+            >  React component hanya dapat menerima satu parameter--berupa objek--yang biasa kita sebut dengan properties (props).
+                 - Melalui props , kita dapat mengirimkan data ketika menggunakannya.
+            > Best Practice membuat dan mengunakan properti/props : 
+                 - Best practice yang pertama adalah hindari penggunaan JavaScript object ketika mengirimkan data pada properti component.
+                 - Gunakan object destructuring dalam mengakses properti/props 
+                 - ketika menggunakan nilai properti, properti bersifat read-only alias hanya boleh dibaca dan tidak boleh diubah nilainya
+            > Children
+                 - pemanggilan children dilakukan diantara tag pembuka dan penutup
+      6. Compositional Component
+            > Pemanggilan props pada saat dipanggil dalam parent bila menggunakan array of object, bisa menggunakan spread operator {...someNews[0]}
+      7. List di React
+            > Menggunakan mapping pada react :
+               -  {someNews.map((news, index) => (
+                  <Card key={index} {...news} />
+                    ))}
+               - key : sebagai tanda bahwa masing-masing element/component yang ditampilkan adalah unik.
+      8. Folder Stucture
+            - Folder public : menampung assets yang ingin diakses melalui public URL aplikasi. Selama fase pengembangan, biasanya URL beralamat di localhost.
+            - Folder src : menampung source code JavaScript (termasuk JSX) dan assets yang diimpor langsung pada JavaScript.
+            > Jika ingin mendeploy web ke production gunakan perintah npm run build untuk membuild ke dalam berkas html, css, dan js secara statis di folder dist
+
+
+
