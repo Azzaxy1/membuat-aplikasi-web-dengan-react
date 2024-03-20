@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const ContactItemImage = ({ imageUrl, tag }) => {
   return (
-    <div>
+    <div className="contact-item__image">
       <img src={imageUrl} alt={tag} />
     </div>
   );

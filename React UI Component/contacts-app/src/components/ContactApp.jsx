@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 
-import { getData } from "./data";
+import { getData } from "../utils/data";
 import ContactList from "./ContactList";
 
 const ContactApp = () => {

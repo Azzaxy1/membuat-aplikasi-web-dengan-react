@@ -1,0 +1,24 @@
+STATEFULL COMPONENT
+      1. Pengantar Statefull Component
+            > Data di dalam komponen yang bertugas untuk menampung perubahan bukanlah props, melainkan state. 
+      2. Class Component
+            > Class Component (Statefull Component) dan Functional Component(stateless Component)
+            > Ketika membuat component dengan class, terdapat fitur default "state" dan lifecycle lainnya. sedangkan dengan function tidak dapat memanfaatkan "state", hanya memanfaatkan "props" sebagai data dalam menampilkan UI
+            > Jangan membuat class component ketika tidak berniat memanfaatkan salah satu benefit yang ditawarkan karena pembuatan class component lebih “mahal” daripada functional component.
+      3. Membuat Class Component
+            > class component dibuat dengan syntax "class" dan mewarisi(extends) React.Component
+            > Setiap clas yang mewarisi "React.Component" wajib memiliki fungsi "render" untuk mengembalikan UI(React Element) yang akan ditampilkan
+            > this.props : untuk mengakses nilai props 
+            > Constructor :  menginisialisasi data--contohnya state--atau menuliskan kode yang akan dipanggil setiap kali pembuatan component.
+            > Ketika menggunakan "Constructor" selalu memanggil base Constructor yaitu "super" dan berikan nilai propsnya. jika tidak maka "this.props" akan undefined
+      4. State Component
+            > Sama sama menyimpan data namun perbedaanya yaitu :
+               - props : Data di dalam props berasal dari luar komponen dan diharapkan tidak berubah
+               - state : data di dalam state perlu diinisialisasi di dalam komponen itu sendiri dan datanya boleh berubah.
+               - setState() : untuk mengubah nilai state di dalam class component. dan terdapat 2 parameter yaitu : objek dan function yang mengembalikan object
+               - Kita menggunakan fungsi setState saat ketika terjadi interaksi dari user
+      5. Event Handling
+            > Pembuatan event handling di react dengan camelCase. ex: onClick={increment}
+            > Props Drilling Event Handler
+              - Data/ state sebaiknya berada di parent component, dan hanya boleh di ubah oleh komponen itu sendiri sehingga fungsi handler--yang notabene akan mengubah state--haruslah berada di parent component.
+              - ketika event terjadi dari children component, naka perlu memberi event handler melalui "props" secara "drilling" / dari parent
