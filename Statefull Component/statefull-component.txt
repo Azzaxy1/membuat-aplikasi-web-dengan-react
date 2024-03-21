@@ -21,4 +21,6 @@ STATEFULL COMPONENT
             > Pembuatan event handling di react dengan camelCase. ex: onClick={increment}
             > Props Drilling Event Handler
               - Data/ state sebaiknya berada di parent component, dan hanya boleh di ubah oleh komponen itu sendiri sehingga fungsi handler--yang notabene akan mengubah state--haruslah berada di parent component.
-              - ketika event terjadi dari children component, naka perlu memberi event handler melalui "props" secara "drilling" / dari parent
+              - ketika event terjadi dari children component, naka perlu memberi event handler melalui "props" secara "drilling" / dari parent.
+      6. Controlled Component(Form)
+            > Controlled Component merupakan component yang me-render form, tetapi “single source of truth” atau sumber datanya diambil dari component state, bukan DOM. Alasan mengapa disebut dengan controlled component karena React mengontrol data form.
