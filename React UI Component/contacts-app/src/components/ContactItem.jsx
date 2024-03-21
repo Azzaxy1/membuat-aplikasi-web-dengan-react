@@ -20,7 +20,7 @@ ContactItem.propTypes = {
   tag: PropTypes.string,
   imageUrl: PropTypes.string,
   id: PropTypes.number,
-  onDelete: PropTypes.func,
+  // onDelete: PropTypes.func,
 };
 
 export default ContactItem;

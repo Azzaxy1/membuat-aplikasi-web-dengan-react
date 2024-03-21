@@ -24,3 +24,12 @@ STATEFULL COMPONENT
               - ketika event terjadi dari children component, naka perlu memberi event handler melalui "props" secara "drilling" / dari parent.
       6. Controlled Component(Form)
             > Controlled Component merupakan component yang me-render form, tetapi “single source of truth” atau sumber datanya diambil dari component state, bukan DOM. Alasan mengapa disebut dengan controlled component karena React mengontrol data form.
+      7. Debugging Component 
+            > menggunakan React Dev Tools extension
+      8. Tips penggunaan JSX untuk pemula
+            - Variabel di JSX yang menghasilkan nilai harus dalam kurung kurawal
+            > Tidak menampilkan apapun
+                  Jika ingin komponen tidak menampilkan apa pun, cukup kembalikan fungsi atau method render dengan null. ex :render() if (isLoading()) {return null;}
+            > Conditional Rendering menggunakan if else biasa / ternary operator dan bisa didalam syntax JSX langsung
+            > React Fragments
+                  Jika tidak ingin penambahan div didalam return component bisa menggunakan fragments dengan <>coding</>
