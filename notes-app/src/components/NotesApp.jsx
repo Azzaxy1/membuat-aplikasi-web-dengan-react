@@ -1,10 +1,10 @@
 import React from "react";
 import NotesList from "./NotesList";
 import NotesAdd from "./NotesAdd";
-import reactIcon from "../assets/react.png";
 import NotesSearch from "./NotesSearch";
+import reactIcon from "../assets/react.png";
 
-import { getInitialData } from "../utils/index";
+import getInitialData from "../utils/index";
 
 export class NotesApp extends React.Component {
   constructor(props) {
@@ -12,11 +12,14 @@ export class NotesApp extends React.Component {
 
     this.state = {
       notes: getInitialData(),
+      search: "",
+      archivedNotes: [],
     };
 
     this.onAddNotesHandler = this.onAddNotesHandler.bind(this);
     this.onDeleteHandler = this.onDeleteHandler.bind(this);
     this.onSearchHandler = this.onSearchHandler.bind(this);
+    this.onArchiveHandler = this.onArchiveHandler.bind(this);
   }
 
   onAddNotesHandler({ title, body, archived }) {
@@ -48,13 +51,20 @@ export class NotesApp extends React.Component {
     });
   }
 
-  onArchiveHandler() {}
+  onArchiveHandler(id) {
+    this.setState((prevNote) => ({
+      notes: prevNote.notes.map((note) => {
+        if (note.id == id) {
+          return { ...note, archived: !note.archived };
+        }
+        return note;
+      }),
+    }));
+  }
 
   render() {
-    let filterSearch = this.state.notes.filter((note) =>
-      note.title
-        .toLowerCase()
-        .includes(this.state.search ? this.state.search.toLowerCase() : "")
+    const filterSearch = this.state.notes.filter((note) =>
+      note.title.toLowerCase().includes(this.state.search.toLowerCase())
     );
 
     return (
@@ -75,7 +85,7 @@ export class NotesApp extends React.Component {
             className="w-20 md:w-32"
           />
         </div>
-        <div className="min-h-screen px-8 md:p-5 m-auto border-dashed rounded-md border-3 w-[60%]">
+        <section className="min-h-screen px-8 md:p-5 m-auto border-dashed rounded-md border-3 w-[60%]">
           <h1 className="mt-4 text-4xl text-center md:text-5xl text-secondary">
             Notes App
           </h1>
@@ -86,7 +96,7 @@ export class NotesApp extends React.Component {
             onDelete={this.onDeleteHandler}
             onArchive={this.onArchiveHandler}
           />
-        </div>
+        </section>
       </main>
     );
   }
