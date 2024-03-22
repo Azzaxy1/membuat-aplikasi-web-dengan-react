@@ -1,5 +1,7 @@
-/* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 import React from "react";
+import PropTypes from "prop-types";
+
 import { Archive } from "lucide-react";
 
 const ArchiveButton = ({ id, onArchive }) => {
@@ -8,6 +10,11 @@ const ArchiveButton = ({ id, onArchive }) => {
       <Archive className="cursor-pointer " onClick={() => onArchive(id)} />
     </>
   );
+};
+
+ArchiveButton.propTypes = {
+  id: PropTypes.number.isRequired,
+  onArchive: PropTypes.func.isRequired,
 };
 
 export default ArchiveButton;

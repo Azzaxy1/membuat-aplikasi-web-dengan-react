@@ -58,12 +58,27 @@ export class NotesApp extends React.Component {
     );
 
     return (
-      <main className="relative py-20 bg-primary">
-        <div className="absolute bottom-0 left-10 ">
-          <img src={reactIcon} alt="react icon" width={200} />
+      <main className="relative py-20 font-sans bg-primary">
+        <div className="absolute top-5 right-3 md:right-10 ">
+          <img
+            src={reactIcon}
+            alt="react icon"
+            width={200}
+            className="w-20 md:w-32"
+          />
         </div>
-        <div className="min-h-screen p-5 m-auto font-sans border-dashed border-3 w-[60%]">
-          <h1 className="text-4xl text-center">Notes App</h1>
+        <div className="absolute bottom-5 left-3 md:left-10 ">
+          <img
+            src={reactIcon}
+            alt="react icon"
+            width={200}
+            className="w-20 md:w-32"
+          />
+        </div>
+        <div className="min-h-screen px-8 md:p-5 m-auto border-dashed rounded-md border-3 w-[60%]">
+          <h1 className="mt-4 text-4xl text-center md:text-5xl text-secondary">
+            Notes App
+          </h1>
           <NotesAdd addNotes={this.onAddNotesHandler} />
           <NotesSearch onSearch={this.onSearchHandler} />
           <NotesList

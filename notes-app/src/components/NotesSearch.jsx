@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from "react";
+import PropTypes from "prop-types";
 
 export class NotesSearch extends React.Component {
   constructor(props) {
@@ -15,12 +15,12 @@ export class NotesSearch extends React.Component {
 
   render() {
     return (
-      <div>
-        <form className="m-auto mt-3 ">
+      <div className="text-center">
+        <form className="m-auto mt-5 ">
           <input
             type="text"
             placeholder="Search..."
-            className="px-2 py-3 "
+            className=" w-[90%] md:w-[96%] rounded-sm border-none px-2 py-3 outline-secondary"
             onChange={this.onSearchChangeEventHandler}
           />
         </form>
@@ -28,5 +28,9 @@ export class NotesSearch extends React.Component {
     );
   }
 }
+
+NotesSearch.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+};
 
 export default NotesSearch;

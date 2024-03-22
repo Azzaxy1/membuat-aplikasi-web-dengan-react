@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from "react";
+import PropTypes from "prop-types";
 
 export class NotesAdd extends React.Component {
   constructor(props) {
@@ -58,23 +58,23 @@ export class NotesAdd extends React.Component {
           Limit caracter : {this.state.remainingChars}
         </h3>
         <input
-          className="px-2 py-3 mb-3 text-base "
+          className="px-2 py-3 mb-3 text-base border-none rounded-sm outline-secondary"
           type="text"
-          placeholder="Masukan judul disini..."
+          placeholder="Redux Toolkit"
           value={this.state.title}
           onChange={this.onTitleChangeHandler}
           required
         />
         <textarea
-          className="h-20 px-2 mb-3 text-base"
+          className="h-20 px-2 py-2 mb-3 text-base border-none rounded-sm outline-secondary"
           type="text"
-          placeholder="Masukan catatanmu disini..."
+          placeholder="Redux toolkit is..."
           value={this.state.body}
           onChange={this.onNotesChangeHandler}
           required
         />
         <div className="flex items-center gap-2 pl-2 mb-2">
-          <label>Archive</label>
+          <label className="text-lg">Archive</label>
           <input
             type="checkbox"
             checked={this.state.archived}
@@ -91,5 +91,9 @@ export class NotesAdd extends React.Component {
     );
   }
 }
+
+NotesAdd.propTypes = {
+  addNotes: PropTypes.func.isRequired,
+};
 
 export default NotesAdd;
